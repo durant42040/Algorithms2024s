@@ -1,0 +1,4 @@
+in the root directory:
+
+make
+./bin/mps inputs/<input_file_name> outputs/<output_file_name>
