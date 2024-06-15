@@ -17,6 +17,7 @@ public:
     map<int, map<int, int> > adj;
     char type;
     int V, E;
+    bool weighted = false;
     vector<int> visited;
     vector<Edge> edges;
     vector<Edge> removed_edges;

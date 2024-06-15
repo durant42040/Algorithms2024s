@@ -1,16 +1,21 @@
 #include "graph.hpp"
 #include "disjoint_set.hpp"
 #include <algorithm>
-#include <iostream>
 
 using namespace std;
 
 void Graph::add_edge(int u, int v, int w) {
     adj[u][v] = w;
     edges.emplace_back(u, v, w);
+    if(w != 1 && !weighted) {
+	    weighted = true;
+    }	
 }
 
 void Graph::sort_edges() {
+    if(!weighted) {
+    	return;
+    } 
     sort(edges.begin(), edges.end(), [](const Edge &a, const Edge &b) {
         return a.weight < b.weight;
     });
